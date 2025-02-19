@@ -1,0 +1,8 @@
+<po-page-default [p-title]="title">
+  <po-dynamic-form #dynamicForm [p-fields]="fields" [p-value]="supplierValues">
+  </po-dynamic-form>
+  <br/>
+  <div class="po-row">
+    <po-button class="po-md-3" p-label="Inserir" (p-click)="insertSupplier()"></po-button>
+  </div>
+</po-page-default>
