@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { env } from '../../env/enviroment';
+import { env } from '../../env/env';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +12,7 @@ export class SupplierFormService {
   constructor(private http: HttpClient) { }
 
   public postNewSupplier(body: string) {
-    const username:string = 'admin';
-    const password:string = '123';
-    const encodedCredentials: string = btoa(`${username}:${password}`);
-
-    const headers = new HttpHeaders({
-      'Authorization': `Basic ${encodedCredentials}`
-    });
-
-    return this.http.post(this.apiREST, body, { headers });
+    return this.http.post(this.apiREST, body);
   }
 
 }
